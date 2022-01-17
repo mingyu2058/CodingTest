@@ -45,14 +45,16 @@ public class SheepAndWolf {
 
             if (node[n].left == 0)
                 return;
-            else
+            else {
                 cal(node, node[n].left);
-
+                // sheep wolf 계산
+            }
             if (node[n].right == 0)
                 return;
-            else
+            else {
                 cal(node, node[n].right);
-
+                // sheep wolf 계산
+            }
 
 
     }
