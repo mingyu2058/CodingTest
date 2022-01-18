@@ -23,7 +23,7 @@ public class Divisor {
         return answer;
     }
 
-    
+
     static int cal(int n){
         int num=0;
         for(int i=1; i<=sqrt(n); i++){

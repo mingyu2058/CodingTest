@@ -4,17 +4,18 @@
  */
 
 public class SheepAndWolf {
+    static int sheep =1, wolf =0;
     public static void main(String args[]){
         int info[] = {0,0,1,1,1,0,1,0,1,0,1,1};
         int edges[][] = {{0,1},{1,2},{1,4},{0,8},{8,7},{9,10},{9,11},{4,3},{6,5},{4,6},{8,9}};
 
         solution(info, edges);
-        System.out.println("edges = " + edges.length);
+        System.out.println("sheep = " + sheep);
 
 
     }
     static int solution(int []info, int[][] edges){
-        int answer = 0, sheep = 1, wolf = 0;
+        int answer = 0;
         int i;
         int result;
         Node[] node = new Node[info.length];
@@ -42,19 +43,35 @@ public class SheepAndWolf {
         node[n].arrive = true;
 
         System.out.println(node[n].n);
+        if(node[n].value==0){
+            sheep++;
+        }
+        else if(node[n].value==1&&wolf+1<sheep){
+            wolf++;
+        }
+        else
+            return;
 
-            if (node[n].left == 0)
-                return;
-            else {
-                cal(node, node[n].left);
-                // sheep wolf 계산
-            }
+
+        if (node[n].left == 0){
             if (node[n].right == 0)
                 return;
             else {
                 cal(node, node[n].right);
-                // sheep wolf 계산
             }
+        }
+        else {
+            cal(node, node[n].left);
+                if (node[n].right == 0)
+                    return;
+                else {
+                    cal(node, node[n].right);
+                    // sheep wolf 계산
+                }
+
+
+            }
+
 
 
     }
