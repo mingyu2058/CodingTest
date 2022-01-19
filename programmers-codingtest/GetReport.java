@@ -8,109 +8,83 @@ import java.util.HashMap;
 
 public class GetReport {
     public static void main(String args[]){
+
         String id_list[] = {"muzi", "frodo", "apeach", "neo"};
         String report[] = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
         int[] result = solution(id_list, report, 2);
 
-        //String id_list[] = {"con", "ryan"};
-        //String report[] = {"ryan con", "ryan con", "ryan con", "ryan con"};
-        //int[] result = solution(id_list, report, 3);
+        /*
+        String id_list[] = {"con", "ryan"};
+        String report[] = {"ryan con", "ryan con", "ryan con", "ryan con"};
+        int[] result = solution2(id_list, report, 3);
+        */
+
 
         for(int i=0; i< result.length; i++)
             System.out.println("result = " + result[i]);
 
 
-
     }
 
     public static int[] solution(String[] id_list, String[] report, int k) {
-        int[] answer;
-        int[] num;
-        int tmp;
-        String first,second;
 
-        num = new int[id_list.length];
+        int answer[]={};
+        int count;
+        String userID,reportID;
+        ArrayList<String> tempReport = new ArrayList<String>();
+
+        HashMap<String,ArrayList<String>> userHM = new HashMap<>();
+        HashMap<String,Integer> countHM = new HashMap<>();
+        HashMap<String,Integer> resultHM = new HashMap<>();
         answer = new int[id_list.length];
 
-        ArrayList<String> s = new ArrayList<>();
-        ArrayList<String> value = new ArrayList<>();
 
-        HashMap<String, ArrayList<String>> list = new HashMap<>();
-        HashMap<String, Integer> count = new HashMap<>();
-
-        for(int i=0; i< report.length; i++){
-            for(int j=i+1; j< report.length-1; j++){
-                if(report[i].equals(report[j])){
-                    report[j]=" ";
-                }
-            }
-        }
-
-        String key;
-
-
-        for(String t : report){
-            if(!t.equals(" ")){
-                tmp = t.indexOf(" ");
-                key = t.substring(0, tmp);
-
-                if(list.get(key).isEmpty()){
-                    list.put(key, value);
-                    value.add(t.substring(tmp + 1));
-                }
-                else{
-                    value = list.get(key);
-                    value.add(t.substring(tmp + 1));
-
-                }
-
-
-            }
+        for(String id : id_list){
+            userHM.put(id,tempReport);
+            countHM.put(id,0);
+            resultHM.put(id,0);
         }
 
 
-        for(String v : list.keySet())
-            System.out.println("v = " + v);
+        // 유저 ID, 유저가 신고한 ID
+        for(String re : report){
+            tempReport = new ArrayList<String>();
 
+            userID = re.split(" ")[0];
+            reportID = re.split(" ")[1];
 
+            tempReport.addAll(userHM.get(userID));
 
+            if(!tempReport.contains(reportID)) {
+                tempReport.add(reportID);
+                userHM.put(userID,tempReport);
+                count = countHM.get(reportID)+1;
+                countHM.put(reportID,count);
 
-/*
-        for(int i=0; i<report.length; i++){
-            for(int j=i+1; j< report.length-1; j++) {
-                if (report[i].equals(report[j])) {
-                    report[j] = " ";
-                }
             }
-            tmp = report[i].lastIndexOf(" ");
-            second = report[i].substring(tmp + 1, report[i].length());
-            for(int j=0; j< id_list.length; j++){
-                if(id_list[j].equals(second)) {
-                    num[j]++;
-                }
-            }
+
         }
 
+        // k이상 id를 신고한 user id 찾기
+        for(String id : id_list){
+            if(countHM.get(id)>=k){
 
-
-        for(int i=0; i<answer.length; i++) {
-            if (num[i] >= k) {
-
-                for (int j = 0; j < report.length; j++) {
-                    tmp = report[j].lastIndexOf(" ");
-                    first = report[j].substring(0,tmp);
-                    second = report[j].substring(tmp+1, report[j].length());
-
-                    if (second.equals(id_list[i])) {
-                        for(int l=0; l<id_list.length; l++){
-                            if(first.equals(id_list[l]))
-                                answer[l]++;
-                        }
+                for(String result_id : id_list){
+                    if(userHM.get(result_id).contains(id)) {
+                        Integer t = resultHM.get(result_id)+1;
+                        resultHM.put(result_id,t);
                     }
+
                 }
 
+
             }
-        }*/
+
+        }
+
+        for(int i=0; i<id_list.length; i++){
+            answer[i] = resultHM.get(id_list[i]);
+        }
 
         return answer;
     }
