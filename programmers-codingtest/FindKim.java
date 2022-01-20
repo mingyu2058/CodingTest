@@ -11,18 +11,19 @@ public class FindKim {
         System.out.println("n = " + n);
     }
 
-    public static String solution(String[] seoul){
-        String answer="";
-        String target ="Kim";
-        int i=0;
+    public static String solution(String[] seoul) {
+        String answer = "";
+        String target = "Kim";
+        int i = 0;
 
-        for(String name : seoul){
-            if(name.equals(target))
+        for (String name : seoul) {
+            if (name.equals(target))
                 break;
             i++;
         }
 
-        answer = "김서방은 "+i+"에 있다";
+        answer = "김서방은 " + i + "에 있다";
         return answer;
+    }
 
 }
