@@ -1,3 +1,8 @@
+/**
+ * 문제: 키패드 누르기
+ * 링크 : https://programmers.co.kr/learn/courses/30/lessons/67256
+ */
+
 public class TouchKeypad {
     public static void main(String args[]){
 
