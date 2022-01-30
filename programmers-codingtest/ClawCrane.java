@@ -16,11 +16,41 @@ public class ClawCrane {
     }
 
     public static int solution(int[][] board, int[] moves){
-        int answer = 0, tmp;
-        int number = 0;
+        int answer = 0, tmp, number =0;
         int[] count = new int[board.length];
         Stack<Integer> stack = new Stack<Integer>();
 
+        for(int move : moves){
+            for(int i=0; i< board.length; i++){
+                if(board[i][move-1]!=0) {
+                    number = board[i][move - 1];
+                    board[i][move-1]=0;
+                    break;
+                }
+                else
+                    number = 0;
+            }
+            if(number==0)
+                continue;
+
+            if(stack.empty()) {
+                stack.push(number);
+            }
+            else {
+                tmp = stack.pop();
+                if (tmp != number) {
+                    stack.push(tmp);
+                    stack.push(number);
+                }
+                else{
+                    answer+=2;
+                }
+            }
+
+        }
+
+        // count를 따로 빼서 돌렸을 때
+/*
         for(int i = 0; i< board.length; i++){
             for(int j=0; j<board.length; j++){
                 if(board[j][i]!=0) {
@@ -29,7 +59,7 @@ public class ClawCrane {
                 }
             }
         }
-
+        
         for(int move : moves){
 
             if(count[move-1]==board.length)
@@ -55,8 +85,9 @@ public class ClawCrane {
                 }
             }
 
-        }
 
+        }
+*/
         return answer;
     }
 
