@@ -7,7 +7,6 @@ import java.util.*;
 
 public class NonCompleteAthlete {
     public static void main(String args[]){
-
         //String[] participant = {"leo", "kiki", "eden"};
         //String[] completion = {"eden", "kiki"};
 
@@ -17,9 +16,7 @@ public class NonCompleteAthlete {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};
 
-
         System.out.println(solution(participant,completion));
-
     }
 
     public static String solution(String[] participant, String[] completion){
@@ -27,7 +24,6 @@ public class NonCompleteAthlete {
         int tmp;
         Map<String, Integer> answerMap = new HashMap<>();
 
-        
         for(String str : completion) {
             if(answerMap.containsKey(str)){
                 tmp = answerMap.get(str);
@@ -51,6 +47,6 @@ public class NonCompleteAthlete {
         }
 
         return answer;
-
+        
     }
 }
