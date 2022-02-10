@@ -7,15 +7,43 @@ import java.util.*;
 
 public class MockTest {
     public static void main(String args[]){
-        //int[] answer = {1, 2, 3, 4, 5};   // 1
+        int[] answer = {1, 2, 3, 4, 5};   // 1
         //int[] answer = {1, 3, 2, 4, 2};   // 1,2,3
-        int[] answer = {3, 3, 1, 1, 1, 1, 2, 3, 4, 5};   // 1,3
-        int[] out = solution(answer);
+        //int[] answer = {3, 3, 1, 1, 1, 1, 2, 3, 4, 5};   // 1,3
+        int[] out = solution2(answer);
 
         for(int num : out)
             System.out.print(num);
 
     }
+    public static int[] solution2(int[] answers){
+        int[] personA = {1, 2, 3, 4, 5};
+        int[] personB = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] personC = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5,};
+        int[] score = {0, 0, 0};
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i=0; i<answers.length; i++){
+            if(answers[i]==personA[i%5]) score[0]++;
+            if(answers[i]==personB[i%8]) score[1]++;
+            if(answers[i]==personC[i%10]) score[2]++;
+        }
+
+        int max = Math.max(score[0], (Math.max(score[1], score[2])));
+
+        for(int i=0; i<3; i++){
+            if(max == score[i])
+                list.add(i + 1);
+        }
+
+        int[] answer = new int[list.size()];
+        for(int i=0; i<answer.length; i++){
+            answer[i] = list.get(i);
+        }
+
+        return answer;
+    }
+
     public static int[] solution(int[] answers){
         int[] answer ;
         int tempA = 0, tempB = 0, tempC = 0;
