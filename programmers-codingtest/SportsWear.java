@@ -17,7 +17,7 @@ public class SportsWear {
 
         int n = 3;
         int[] lost = {3};
-        int[] reserve = {1};
+        int[] reserve = {1}; //2
 
 
         System.out.println(solution(n,lost,reserve));
@@ -26,49 +26,35 @@ public class SportsWear {
         int answer =0;
         ArrayList<Integer> list = new ArrayList<>();
 
-        for(int i=0; i<n; i++)
-            list.add(i,1);
 
-        System.out.println("list = " + list);
+        /**
+         * 0개 : -1
+         * 1개 : 0
+         * 2개 : 1
+         */
+        for(int i=0; i<n; i++) list.add(0);
 
-        for(int lo : lost){
-            list.set(lo-1, -1);
-        }
-        for (int re : reserve) {
-            if(list.get(re-1)==1)
-                list.set(re-1, 2);
-            else
-                list.set(re-1, 1);
-        }
+        for(int lo : lost) list.set(lo-1, -1);
 
-        if(list.get(0)==-1)
-            if (list.get(1) == 2) {
-                list.set(0,1);
-                list.set(1, 1);
-            }
-
-        for(int i=1; i<n-1; i++){
-            if(list.get(i)==-1){
-                if(list.get(i-1)==2){
-                    list.set(i - 1, 1);
-                    list.set(i, 1);
-                    continue;
-                }
-                else if(list.get(i+1)==2){
-                    list.set(i + 1, 1);
-                    list.set(i, 1);
-                    continue;
-                }
-            }
-        }
-        if(list.get(n-1)==-1)
-            if (list.get(n-2) == 2) {
-                list.set(n-1,1);
-                list.set(n-2, 1);
-            }
+        for (int re : reserve) list.set(re - 1, list.get(re - 1) + 1);
 
         for(int i=0; i<n; i++){
-            if(list.get(i)>=1) {
+            if(list.get(i)==-1){
+                if(i-1>=0 && list.get(i-1)==1){
+                    list.set(i - 1, 0);
+                    list.set(i, 0);
+                    continue;
+                }
+                else if(i+1<n && list.get(i+1)==1){
+                    list.set(i + 1, 0);
+                    list.set(i, 0);
+                    continue;
+                }
+            }
+        }
+
+        for(int i=0; i<n; i++){
+            if(list.get(i)>=0) {
                 answer++;
             }
         }
