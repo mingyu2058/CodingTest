@@ -16,6 +16,10 @@ public class RecommendNewID {
 
         }
 
+        
+        
+        // 가시성 위해 result[i]>= 48 을 '1'로 수정
+        // 중복 if 메소드로 수정
         public static String solution(String new_id) {
             String answer = "";
             char[] result = new_id.toCharArray();
