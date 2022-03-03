@@ -15,6 +15,8 @@ public class CaesarCipher {
 
         for(int i=0; i<result.length; i++) {
             int tmp = n % 26;
+
+            // result[i] >= 'A' && result[i] <= 'Z'
             if(result[i]>=65&&result[i]<=90) {
                 if (result[i] + tmp >= 91)
                     result[i] = (char) (result[i] + tmp - 90 + 64);
