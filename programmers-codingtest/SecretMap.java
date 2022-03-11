@@ -1,3 +1,8 @@
+/**
+ * 문제 : 최소직사각형
+ * 링크 : https://programmers.co.kr/learn/courses/30/lessons/17681
+ */
+
 import java.util.Stack;
 
 public class SecretMap {
@@ -12,7 +17,8 @@ public class SecretMap {
         int[] arr2 = {27 ,56, 19, 14, 14, 10};
         // "######", "### #", "## ##", " #### ", " #####", "### # "
 
-        String[] answer = solution(n, arr1, arr2);
+        //String[] answer = solution(n, arr1, arr2);
+        String[] answer = solution2(n, arr1, arr2);
         for(String s : answer)
             System.out.println("s = " + s);
     }
@@ -44,6 +50,26 @@ public class SecretMap {
                     answer[i] += answerReverse.pop();
                 }
         }
+
+        return answer;
+    }
+
+    // String.format 함수 사용 및 String.replaceAll 사용
+
+    public static String[] solution2(int n, int arr1[], int arr2[]){
+        String[] answer=new String[n];
+
+        for(int i=0; i<n; i++) {
+            answer[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+            answer[i] = String.format("%"+n+"s",answer[i] );
+
+            answer[i] = answer[i].replaceAll("1" , "#");
+            answer[i] = answer[i].replaceAll("0", " ");
+        }
+
+
+
+
 
         return answer;
     }
