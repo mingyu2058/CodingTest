@@ -42,13 +42,15 @@ public class CountryOfOneTwoFour {
                     break;
             }
         }
+
         while(!stack.isEmpty()){
             answer += Integer.toString(stack.pop());
         }
-
         answer = answer.replaceAll("1", "1");
         answer = answer.replaceAll("2", "2");
         answer = answer.replaceAll("3", "4");
+
+
 
 
         return answer;
