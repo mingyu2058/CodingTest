@@ -63,6 +63,9 @@ public class StringCompression {
         int result = 0;
         int k;
         
+        
+        // 중복 있으면 그냥 카운터만 하기
+        // 따로 결과랑 관련된 문자열 만들지는 않음
         for(int i = 0; i < 1; i++){
             for(int j = 0; j<s.length()-count; j++) {
                 result += count;  // 결과 + 글자 수
