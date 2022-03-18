@@ -6,11 +6,11 @@
 public class StringCompression {
     public static void main(String args[]){
 
-        String s = "aabbaccc"; // 7
-        //String s = "ababcdcdababcdcd" //9
+        //String s = "aabbaccc"; // 7
+        //String s = "ababcdcdababcdcd"; //9
         //String s = "abcabcdede"; // 8
         //String s = "abcabcabcabcdededededede"; // 14
-        //String s = "xababcdcdababcdcd" // 17
+        String s = "xababcdcdababcdcd"; // 17
 
 
         System.out.println(solution(s));
@@ -62,23 +62,29 @@ public class StringCompression {
         int count = 1;
         int result = 0;
         int k;
-        
-        
+        int min=9999;
+
+
         // 중복 있으면 그냥 카운터만 하기
         // 따로 결과랑 관련된 문자열 만들지는 않음
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < s.length()/2; i++){
             for(int j = 0; j<s.length()-count; j++) {
                 result += count;  // 결과 + 글자 수
                 k = j + count;  //  k => 중복있으면 1 추가
                 tmp = count;  // 건너 뛸 변수
+
+                if(k+count>=s.length())
+                    break;
+                System.out.println("j = " + j);
                 while (s.substring(j, j+count).equals(s.substring(k, k+count))) {
-                    System.out.println("s.substring(j,j+count) = " + s.substring(j, j + count));
-                    System.out.println("s.substring(k,k+count) = " + s.substring(k, k + count));
-                    System.out.println();
+
+                    //System.out.println("s.substring(j,j+count) = " + s.substring(j, j + count));
+                    //System.out.println("s.substring(k,k+count) = " + s.substring(k, k + count));
+                    //System.out.println();
 
                     tmp+=count;
-                    k++;
 
+                    k++;
 
                     if(k==s.length()-count)
                         break;
@@ -88,12 +94,18 @@ public class StringCompression {
                 if (k != j + count)
                     result += 1;
 
-                j += tmp;
+                j += tmp-1;
+                if(s.length()<=j+tmp)
+                    break;
 
             }
+            if(result < min)
+                min = result;
+
             count++;
         }
 
+        System.out.println("min = " + min);
         System.out.println("result = " + result);
 
         return answer;
