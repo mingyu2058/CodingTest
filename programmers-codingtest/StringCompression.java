@@ -10,9 +10,19 @@ public class StringCompression {
         //String s = "ababcdcdababcdcd"; //9
         //String s = "abcabcdede"; // 8
         //String s = "abcabcabcabcdededededede"; // 14
-        String s = "xababcdcdababcdcd"; // 17
+        //String s = "xababcdcdababcdcd"; // 17
 
+        //String s = "aaaaaaaaaaaabcd"; // 6
+        //String s = "xxxxxxxxxxyyy"; // 5
+        //String s = "a"; // 1
+        //String s = "abcabcabcdabcfabcabcabczabcabcdddabc"; //27
+        String s = "abcabcdededededede";
+/*
+        String s = "";
 
+        for(int i = 0; i< 999; i++)
+            s+="a";
+*/
         System.out.println(solution(s));
     }
 
@@ -23,7 +33,9 @@ public class StringCompression {
         int k;
         int min = 9999;
 
-        for (int i = 0; i < s.length() / 2; i++) {
+        if(s.length()==1)
+            return 1;
+        for (int i = 0; i < s.length()/2; i++) {
             result = 0;
             for (int j = 0; j < s.length(); j++) {
                 result += count;  // 결과 + 글자 수
@@ -31,12 +43,15 @@ public class StringCompression {
                 tmp = count;  // 건너 뛸 변수
 
                 if (k + count > s.length()) {
-                    if (result == s.length())
+                    if (result == s.length()) {
                         break;
-                    else
+                    }
+                    else {
                         result += (s.length() - k);
+                    }
                     break;
                 }
+
                 while (s.substring(j, j + count).equals(s.substring(k, k + count))) {
                     tmp += count;
                     k += count;
@@ -44,13 +59,19 @@ public class StringCompression {
                         break;
                 }
                 if (k != j + count) {
-                    result += 1;
+                    if(k<j+(count*10)) {
+                        result += 1;
+                    }
+                    else if(k<j+(count*100)) {
+                        result += 2;
+                    }
+                    else if(k<j+(count*1000)){
+                        result += 3;
+                    }
+                    else
+                        result +=4;
                 }
 
-                if (k + count > s.length()) {
-                    System.out.println("a");
-                    break;
-                }
                 j += tmp - 1;
 
             }
