@@ -1,3 +1,5 @@
+import javax.swing.plaf.IconUIResource;
+
 /**
  * 문제 : 문자열 압축
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/60057
@@ -16,20 +18,67 @@ public class StringCompression {
         //String s = "xxxxxxxxxxyyy"; // 5
         //String s = "a"; // 1
         //String s = "abcabcabcdabcfabcabcabczabcabcdddabc"; //27
-        String s = "abcabcdededededede";
-/*
-        String s = "";
+        //String s = "abcabcdededededede";
 
-        for(int i = 0; i< 999; i++)
+        String s = "";
+/*
+        for(int i = 0; i< 10; i++)
             s+="a";
 */
-        System.out.println(solution(s));
+        System.out.println(solution2(s));
+        //System.out.println(solution(s));  - >  해결 실패
+    }
+
+    public static int solution2(String s){
+        int result, tmp;
+        int min = s.length();
+
+        if(s.length()==1)
+            return 1;
+
+        for(int i = 1; i<=s.length()/2; i++){
+            result = 0;
+            for(int cursor = 0; cursor<=s.length(); ) {
+
+                if((cursor+2*i)>s.length()){
+                    result += s.length() - cursor;
+                    break;
+                }
+                result += i;
+                tmp = 0;
+                
+                while (s.substring(cursor, (cursor + i)).equals(s.substring((cursor +  i), (cursor + 2 * i)))) {
+                    cursor += i;
+                    tmp++;
+                    if((cursor+2*i)>s.length())
+                        break;
+                }
+                
+                // 십,백,천의 자리 따로 설정
+                if(tmp != 0){
+                    if(tmp<9)
+                        result++;
+                    else if(tmp<99)
+                        result +=2;
+                    else if(tmp<999)
+                        result +=3;
+                    else
+                        result +=4;
+                }
+                cursor += i;
+            }
+
+            //  최소값 구하기
+            if(result < min)
+                min = result;
+        }
+        return min;
     }
 
     public static int solution(String s) {
-        int tmp = 0;
+        int tmp;
         int count = 1;
-        int result = 0;
+        int result;
         int k;
         int min = 9999;
 
@@ -58,6 +107,7 @@ public class StringCompression {
                     if (k + count > s.length())
                         break;
                 }
+
                 if (k != j + count) {
                     if(k<j+(count*10)) {
                         result += 1;
@@ -73,7 +123,6 @@ public class StringCompression {
                 }
 
                 j += tmp - 1;
-
             }
             if (result < min)
                 min = result;
