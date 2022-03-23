@@ -1,4 +1,3 @@
-import javax.swing.plaf.IconUIResource;
 
 /**
  * 문제 : 문자열 압축
