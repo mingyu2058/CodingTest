@@ -30,7 +30,7 @@ public class StringCompression {
 
     public static int solution2(String s){
         int result, tmp;
-        int min = s.length();
+        int min = s.length();  // 최소값은 압축이 안될때 즉 s.length()만큼
 
         if(s.length()==1)
             return 1;
@@ -73,7 +73,7 @@ public class StringCompression {
         }
         return min;
     }
-
+/* 통과 안되는 코드 사례 중에 2개를 통과하지 못함. 이유를 몰라서 수정 
     public static int solution(String s) {
         int tmp;
         int count = 1;
@@ -131,4 +131,5 @@ public class StringCompression {
 
         return min;
     }
+ */
 }
