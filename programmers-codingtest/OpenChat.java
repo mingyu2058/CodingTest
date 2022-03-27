@@ -3,6 +3,8 @@
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/42888
  */
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class OpenChat {
     public static void main(String args[]){
@@ -12,9 +14,12 @@ public class OpenChat {
 
     public static String[] solution(String[] record) {
         String[] answer = {};
+
+        Map<String, String> user = new HashMap<>();
+
         
-        // String으로 공백으로 나누기
-        // enter로 나눈 후 id,이름 Map으로 구현
+        // String으로 공백으로 나누기 strcat
+        // enter로 나눈 후 id,이름 Map으로 구현 Map = new HashMap;
         // 대소문자까지 구별
         // change는  해당 user를 leave 후 enter로 바뀜
         
