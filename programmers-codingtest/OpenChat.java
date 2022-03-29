@@ -17,7 +17,10 @@ public class OpenChat {
 
         Map<String, String> user = new HashMap<>();
 
-        
+        for(int i = 0; i < record.length; i++){
+            user.put(record[i],"");
+        }
+
         // String으로 공백으로 나누기 strcat
         // enter로 나눈 후 id,이름 Map으로 구현 Map = new HashMap;
         // 대소문자까지 구별
