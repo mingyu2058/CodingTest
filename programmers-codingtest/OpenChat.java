@@ -29,4 +29,8 @@ public class OpenChat {
         
         return answer;
     }
+
+    void change(){
+        return;
+    }
 }
