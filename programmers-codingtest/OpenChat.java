@@ -8,6 +8,22 @@ import java.util.Map;
 
 public class OpenChat {
     public static void main(String args[]){
+        int arr[] ={4,5,2,3,1,6,7,8};
+        int tmp;
+
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i+1; j < arr.length; j++){
+                if(arr[j] < arr[i]){
+                    tmp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tmp;
+                }
+            }
+        }
+
+        for(int i = 0; i < arr.length; i++)
+            System.out.print(arr[i]+" ");
+
         String[] s = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
         System.out.println(solution(s));
     }
