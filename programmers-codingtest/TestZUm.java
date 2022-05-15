@@ -29,6 +29,8 @@ public class TestZUm {
             System.out.println("result = " + result[i]);
 
     }
+    
+    // 1
     public static long solution(long n) {
         long answer = 0;
 
@@ -44,6 +46,8 @@ public class TestZUm {
         return answer;
     }
 
+    
+    //2 
     /*
     public static int[] solution(int[][] data) {
         int[] answer = new int[data.length];
@@ -84,6 +88,7 @@ public class TestZUm {
     }
     */
 
+    //3 
     /*
     public static int solution(int[] histogram) {
         int answer = -1;
@@ -107,6 +112,7 @@ public class TestZUm {
     }
      */
 
+    //4 -> 해결 못함
     public static int[] solution(int[][] grid) {
         int[] answer = {};
 
