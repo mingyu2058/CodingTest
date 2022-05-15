@@ -1,9 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class kakaoTest {
+public class TestKakao {
     public static void main(String args[]){
         //String survey[] = {"AN", "CF", "MJ", "RT", "NA"};
         //int[] choices = {5,3,2,7,5};
