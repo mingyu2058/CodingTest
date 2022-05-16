@@ -1,3 +1,4 @@
+// 2022년 카카오 하계 인턴 코딩테스트 / 5 문제 중 2개
 public class TestKakao {
     public static void main(String args[]){
         //String survey[] = {"AN", "CF", "MJ", "RT", "NA"};
