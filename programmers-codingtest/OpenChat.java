@@ -42,7 +42,6 @@ public class OpenChat {
 
         }
         user.get(0);
-        System.out.println(" 잠와죽겠네 진짜 ");
 
         // String으로 공백으로 나누기 strcat = > substring
         // enter로 나눈 후 id,이름 Map으로 구현 Map = new HashMap;
