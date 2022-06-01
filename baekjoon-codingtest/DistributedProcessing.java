@@ -12,6 +12,6 @@ public class DistributedProcessing {
 
         int num = sc.nextInt();
 
-        
+
     }
 }
