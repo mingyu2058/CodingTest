@@ -1,5 +1,6 @@
 import java.util.*;
 
+// 3문제 중 2문제 but 히든 케이스는 모름
 public class TestLine {
     public static void main(String args[]){
         /* 1번
