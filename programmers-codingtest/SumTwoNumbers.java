@@ -1,10 +1,10 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-
 /**
  * 문제 : 두 개 뽑아서 더하기
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/68644
  */
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class SumTwoNumbers {
     public static void main(String args[]){

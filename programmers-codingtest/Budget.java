@@ -1,10 +1,10 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-
 /**
  * 문제 : 예산
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/12982
  */
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Budget {
     public static void main(String args[]){

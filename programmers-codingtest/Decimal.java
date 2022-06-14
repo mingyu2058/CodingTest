@@ -1,10 +1,9 @@
-import static java.lang.Math.sqrt;
-
 /**
  * 문제 : 소수 찾기
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/12921
  */
 
+import static java.lang.Math.sqrt;
 
 public class Decimal {
     public static void main(String args[]){

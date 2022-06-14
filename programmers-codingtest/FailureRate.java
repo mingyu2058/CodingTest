@@ -1,10 +1,11 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-
 /**
  * 문제 : 실패율
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/42889
  */
+
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class FailureRate {
     public static void main(String args[]){

@@ -1,10 +1,10 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /**
  * 문제 : 신고 결과 받기
  * 링크 : https://programmers.co.kr/learn/courses/30/lessons/92334
  */
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GetReport {
     public static void main(String args[]){

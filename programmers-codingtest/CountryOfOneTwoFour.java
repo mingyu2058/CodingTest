@@ -7,11 +7,6 @@ import java.util.Stack;
 
 public class CountryOfOneTwoFour {
     public static void main(String args[]){
-        //int n = 1;  //1
-        //int n = 2;  //2
-        //int n = 3;  //4
-        //int n = 4;  //11
-
         System.out.println(solution(1));
         System.out.println(solution(2));
         System.out.println(solution(3));
@@ -49,8 +44,6 @@ public class CountryOfOneTwoFour {
         answer = answer.replaceAll("1", "1");
         answer = answer.replaceAll("2", "2");
         answer = answer.replaceAll("3", "4");
-
-
 
 
         return answer;
