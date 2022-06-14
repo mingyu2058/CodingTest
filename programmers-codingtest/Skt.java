@@ -29,7 +29,6 @@ public class Skt {
         solution(n,plans,clients);
     }
     // solve 1
-    /*
     public static int[] solution(int[] p) {
         int[] answer = new int[p.length];
         int[] count = new int[p.length];
@@ -66,9 +65,6 @@ public class Skt {
 
         return answer;
     }
-
-     */
-
 
     // solve 2
     /*
