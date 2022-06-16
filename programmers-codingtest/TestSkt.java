@@ -1,5 +1,6 @@
-import java.util.ArrayList;
 // 4문제 중 2문제 3시간 중 시험 때문에 1시간 반 정도 사용
+import java.util.ArrayList;
+
 public class TestSkt {
     public static void main(String args[]){
         //int p[] = {2,5,3,1,4};
