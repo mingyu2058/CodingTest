@@ -34,7 +34,7 @@ public class Fibonacci5 {
     public static void main(String args[]){
         int n;
 
-        int num[] = new int[20];
+        int  num[] = new int[20];
         num[0] = 0;
         num[1] = 1;
 
