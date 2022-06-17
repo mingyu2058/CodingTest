@@ -6,6 +6,9 @@
 import java.util.Scanner;
 
 public class Fibonacci5 {
+
+    // 기존 풀이
+    /*
     public static void main(String args[]) {
         int sum = 0, n1, n2;
 
@@ -27,6 +30,22 @@ public class Fibonacci5 {
             }
             System.out.println(sum);
         }
+    }*/
+    public static void main(String args[]){
+        int n;
+
+        int num[] = new int[20];
+        num[0] = 0;
+        num[1] = 1;
+
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+
+        for(int i = 2; i < 20; i++){
+            num[i] = num[i-1] + num[i-2];
+        }
+        System.out.println(num[n]);
+
     }
 
 }
