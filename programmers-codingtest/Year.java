@@ -21,7 +21,7 @@ public class Year {
          12/1 : 목
          */
 
-        
+
         int a = 5;
         int b = 24;
 
