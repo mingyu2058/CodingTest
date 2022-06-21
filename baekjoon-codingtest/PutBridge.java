@@ -50,6 +50,7 @@ public class PutBridge {
     public static void main(String args[]){
         int dp[][] = new int[31][31];
 
+        
         Scanner sc = new Scanner(System.in);
 
         dp[0][0] = 0;
