@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Fibonacci5 {
 
-    // 기존 풀이
+    // 기존 풀이(점화식 사용x)
     /*
     public static void main(String args[]) {
         int sum = 0, n1, n2;
