@@ -50,10 +50,10 @@ public class PutBridge {
     public static void main(String args[]){
         int dp[][] = new int[31][31];
 
-        
         Scanner sc = new Scanner(System.in);
 
         dp[0][0] = 0;
+
 
         for(int i = 0; i < 31; i++) dp[1][i] = i;
 
