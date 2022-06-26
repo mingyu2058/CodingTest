@@ -27,7 +27,6 @@ public class Samsung {
         long sum[] = new long[testCase];
 
         String w[] = new String[3];
-        String line[];
         String day[];
 
 
@@ -39,13 +38,12 @@ public class Samsung {
             m = Integer.parseInt(w[1]);
             days = Integer.parseInt(w[2]);
 
-            line = new String[m];
             StringBuilder sb = new StringBuilder();
 
             arr = new int[n*m];
             day = new String[days];
             //sum = 0;
-            int tmp = 0;
+            int tmp;
 
             for(int i = 0; i < n; i++){
                 sb.append(bf.readLine());
@@ -64,6 +62,11 @@ public class Samsung {
             tmp = 1;
 
             for(int i = 0; i < days; i++){
+                if(i == days/2){
+                    Arrays.sort(arr);
+                    tmp=1;
+                }
+
                 for(int j = 0; j < n*m; j++){
                     arr[j] = arr[j] + 1;
                 }
@@ -75,8 +78,12 @@ public class Samsung {
                         tmp = 1;
                 }
 
+                for(int q = 0; q < n*m; q++){
+                  //  System.out.print(arr[q]+" ");
+                }
+                //System.out.println();
             }
-            // System.out.println("#"+(t+1)+" "+sum);
+            //System.out.println("#"+(t+1)+" "+sum);
         }
         for(int i = 0; i < testCase; i++){
             //System.out.printf("#%d %d\n",(i+1),sum[i]);
