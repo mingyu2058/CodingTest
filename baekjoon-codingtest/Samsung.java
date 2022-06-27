@@ -6,20 +6,7 @@ public class Samsung {
         int n, m, days;
         int arr[];
         //long sum = 0;
-        /*
-        System.out.println("#2 624");
-        System.out.println("#3 464");
-        System.out.println("#4 536");
-        System.out.println("#5 674");
-        System.out.println("#6 7779");
-        System.out.println("#7 10842");
-        System.out.println("#8 20538");
-        System.out.println("#8 15444");
-        System.out.println("#9 10554");
-        System.out.println("#10 165486");
-        System.out.println("#11 8705493");
-        */
-
+        
         BufferedReader bf = new BufferedReader(
                 new FileReader("sample_input.txt")
         );

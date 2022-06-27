@@ -161,17 +161,6 @@ public class Samsung2 {
 
            // System.out.println("function(R,K,0,C[0],C[1],A[0],A[1],B[0],B[1]) = " + function(R,K,0,C[0],C[1],A[0],A[1],B[0],B[1]));
 
-            /*
-            int min1 = function(R,K,0,B[0],B[1],A[0],A[1],C[0],C[1]);
-            int y = function(B[0],B[1],0,C[0],C[1],A[0],A[1],-1,-1);
-            int z = function(C[0],C[1],0,A[0],A[1],-1,-1,-1,-1);
-            int a = Math.abs(finishX-A[0]) + Math.abs(finishY-A[1]);
-
-
-            System.out.println("a = " + a);
-            //System.out.println("S-B = " + x);
-            System.out.println("B-C = " + y);
-            System.out.println("C-A = " + z);*/
 
             // 그림 출력
 /*
@@ -194,12 +183,6 @@ public class Samsung2 {
         visited = new boolean[N][M];
         visited[i][j] = true;
 
-
-        visited[aX][aY] = false;
-        visited[bX][bY] = false;
-        visited[cX][cY] = false;
-
-
         int distance;
 
         int[] dx = {0,1,0,-1};
@@ -217,21 +200,8 @@ public class Samsung2 {
                 int y = now[1] + dy[k];
                 distance = now[2];
 
-                //System.out.println("goalX = " + goalX);
-                //System.out.println("goalY = " + goalY);
-
                 if(x>=0 && y>=0 && x < N && y < M) {
-   //                 System.out.print("x = " + x);
- //                   System.out.println("  y = " + y);
-/*
-                    System.out.print("tmp1X = " + tmp1X);
-                    System.out.println("  tmp1Y = " + tmp1Y);
-
-                    System.out.print("tmp2X = " + tmp2X);
-                    System.out.println("  tmp2Y = " + tmp2Y);
-*/
                     if(x == goalX && y == goalY){
-                        //distance++;
                        // System.out.print("goalX = " + goalX);
                        // System.out.println("  goalY = " + goalY);
                        // System.out.println("distance = " + distance);
@@ -249,8 +219,6 @@ public class Samsung2 {
             }
         }
 
-        //System.out.println("\"asd\" = " + "asd");
-        //return distance;
-        return 9999;
+        return 100000;
     }
 }
