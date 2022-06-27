@@ -6,7 +6,7 @@ public class Samsung {
         int n, m, days;
         int arr[];
         //long sum = 0;
-        
+
         BufferedReader bf = new BufferedReader(
                 new FileReader("sample_input.txt")
         );
