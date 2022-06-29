@@ -25,10 +25,13 @@ public class SumOfSection5 {
         String line[];
 
         for(int i = 0; i < n; i++){
-            line = bf.readLine().split(" ");
+            tokenizer = new StringTokenizer(bf.readLine());
+
+            //line = bf.readLine().split(" ");
             sum[i][0] = 0;
             for(int j = 1; j <= n; j++){
-                sum[i][j] = sum[i][j-1] + Integer.parseInt(line[j-1]);
+                sum[i][j] = sum[i][j-1] + Integer.parseInt(tokenizer.nextToken());
+                //sum[i][j] = sum[i][j-1] + Integer.parseInt(line[j-1]);
             }
 
         }
