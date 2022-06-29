@@ -21,46 +21,40 @@ public class SumOfSection5 {
         //int n = Integer.parseInt(firstLine[0]);
         //int testCase = Integer.parseInt(firstLine[1]);
 
-        int sum[][] = new int[n][n+1];
-        String line[];
+        int sum[][] = new int[n+1][n+1];
+        int table[][] = new int[n+1][n+1];
+        //String line[] = new String[n];
 
-        for(int i = 0; i < n; i++){
+        for(int i = 1; i <= n; i++){
             tokenizer = new StringTokenizer(bf.readLine());
-
-            //line = bf.readLine().split(" ");
             sum[i][0] = 0;
             for(int j = 1; j <= n; j++){
-                sum[i][j] = sum[i][j-1] + Integer.parseInt(tokenizer.nextToken());
+                table[i][j] = Integer.parseInt(tokenizer.nextToken());
+                //sum[i][j] = sum[i][j-1] + Integer.parseInt(tokenizer.nextToken());
                 //sum[i][j] = sum[i][j-1] + Integer.parseInt(line[j-1]);
             }
+        }
 
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                sum[i][j] = sum[i][j-1] + sum[i-1][j] - sum[i-1][j-1] + table[i][j];
+            }
         }
 
         for(int t = 0; t < testCase; t++){
             tokenizer = new StringTokenizer(bf.readLine());
-
             int x1 = Integer.parseInt(tokenizer.nextToken()), y1 = Integer.parseInt(tokenizer.nextToken());
             int x2 = Integer.parseInt(tokenizer.nextToken()), y2 = Integer.parseInt(tokenizer.nextToken());
 
-            //line = bf.readLine().split(" ");
-            //int x1 = Integer.parseInt(line[0]), y1 = Integer.parseInt(line[1]);
-            //int x2 = Integer.parseInt(line[2]), y2 = Integer.parseInt(line[3]);
-
             int result = 0;
 
-            if(x1==x2){
-             if(y1 == y2){
-                 result = sum[x1-1][y1] - sum[x1-1][y1-1];
-             }
-             else{
-                 result = sum[x2-1][y2] - sum[x1-1][y1-1];
-             }
+            if(x1==x2 && y1 == y2){
+                 result = table[x1][y1];;
             }
             else {
-                for (int x = x1; x <= x2; x++) {
-                    result += sum[x-1][y2] - sum[x-1][y1 - 1];
-                }
+                result = sum[x2][y2] - sum[x1-1][y2] - sum[x2][y1-1] + sum[x1-1][y1-1];
             }
+
             System.out.println(result);
         }
 
