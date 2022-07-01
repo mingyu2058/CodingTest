@@ -1,3 +1,8 @@
+/**
+ * 문제 : 수들의 합 5
+ * 링크 : https://www.acmicpc.net/problem/2018
+ **/
+
 import java.util.Scanner;
 
 public class SumOfNumber5 {
