@@ -73,10 +73,10 @@ public class SumOfNumber5 {
                 endPoint++;
                 sum += endPoint;
             }
-            System.out.println("sum = " + sum);
-            System.out.println("endPoint = " + endPoint);
         }
 
+
+        System.out.println(result+1);
 
         return result;
     }
