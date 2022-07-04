@@ -26,22 +26,37 @@ public class Good {
         }
 
 
-        int sum = arr[0] + arr[1];
-        int firstPoint = 0;
-        int endPoint = 1;
+        int sum ;
+        int firstPoint ;
+        int endPoint;
 
-        for(int i = 2; i < n; i++) {
-            while (true) {
-                if (arr[i] == sum)
-                    result++;
-                else if (arr[i] < sum) {
+        Arrays.sort(arr);
+
+        for(int i = 0; i < n; i++) {
+            firstPoint = 0;
+            endPoint = n-1;
+
+            while (firstPoint < endPoint) {
+                sum = arr[firstPoint] + arr[endPoint];
+                if (arr[i] == sum) {
+                    if( i != firstPoint && i != endPoint) {
+                        result++;
+                        break;
+                    }
+                    else if(i==firstPoint){
+                        firstPoint++;
+                    }
+                    else{
+                        endPoint--;
+                    }
+                } else if (arr[i] > sum) {
                     firstPoint++;
                 } else {
-                    endPoint++;
+                    endPoint--;
                 }
-                if (firstPoint == endPoint)
-                    break;
             }
+
+
         }
 
         System.out.println(result);
