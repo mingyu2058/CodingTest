@@ -1,7 +1,11 @@
 import java.io.*;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class FindMinimum {
+    // 시간초과
+    /*
     public static void main(String args[]) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -45,5 +49,81 @@ public class FindMinimum {
 
         }
         bw.flush();
+    }*/
+
+    public static void main(String args[]) throws IOException {
+        //Deque<Integer> deque = new LinkedList<>();
+
+        Deque<Node> deque = new LinkedList<>();
+
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer tokenizer = new StringTokenizer(bf.readLine());
+
+        int n = Integer.parseInt(tokenizer.nextToken());
+        int l = Integer.parseInt(tokenizer.nextToken());
+        Node node;
+
+        tokenizer = new StringTokenizer(bf.readLine());
+
+        // 뒤에가 first 먼저 들어간게 last
+        for(int i = 1; i <= n; i++){
+            node = new Node(i,Integer.parseInt(tokenizer.nextToken()));
+
+            if(deque.isEmpty()) {
+                deque.push(node);
+                System.out.println(deque.peekFirst().value);
+                continue;
+            }
+
+            if(deque.peekLast().n < (i - l + 1) ){
+                deque.removeLast();
+            }
+
+            if(deque.peekFirst().value  < node.value){
+                System.out.println(deque.peekFirst().value);
+                continue;
+            }
+            else{
+                deque.push(node);
+                System.out.println(deque.peekFirst().value);
+            }
+        }
+
+        //tokenizer = new StringTokenizer(bf.readLine());
+
+        /*
+        int t;
+        int min = Integer.parseInt(tokenizer.nextToken());
+        bw.write(min + " ");
+        deque.push(min);
+        for(int i = 0; i < l; i++){
+            t = Integer.parseInt(tokenizer.nextToken());
+            if(t < min){
+                min = t;
+                bw.write(min+" ");
+            }
+        }
+
+        System.out.println("deque = " + deque);
+        // 뒤에가 first 먼저 들어간게 last
+        for(int i = l; i < n; i++){
+            t = Integer.parseInt(tokenizer.nextToken());
+            if(deque.peekFirst() > t ){
+                continue;
+            }
+
+        }*/
+    }
+    public static class Node{
+        private int n;
+        private int value;
+
+        Node(int n,int value){
+            this.n = n;
+            this.value = value;
+        }
     }
 }
+
