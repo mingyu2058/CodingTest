@@ -1,3 +1,8 @@
+/**
+ * 문제 : 최솟값 찾기
+ * 링크 : https://www.acmicpc.net/problem/11003
+ **/
+
 import java.io.*;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -53,7 +58,6 @@ public class FindMinimum {
 
     public static void main(String args[]) throws IOException {
         //Deque<Integer> deque = new LinkedList<>();
-
         Deque<Node> deque = new LinkedList<>();
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -63,59 +67,28 @@ public class FindMinimum {
 
         int n = Integer.parseInt(tokenizer.nextToken());
         int l = Integer.parseInt(tokenizer.nextToken());
-        Node node;
-
         tokenizer = new StringTokenizer(bf.readLine());
+        int t;
 
         // 뒤에가 first 먼저 들어간게 last
         for(int i = 1; i <= n; i++){
-            node = new Node(i,Integer.parseInt(tokenizer.nextToken()));
+            t = Integer.parseInt(tokenizer.nextToken());
 
-            if(deque.isEmpty()) {
-                deque.push(node);
-                System.out.println(deque.peekFirst().value);
-                continue;
-            }
+            while(!deque.isEmpty() && deque.peekFirst().n < i-l+1 )
+                deque.removeFirst();
 
-            if(deque.peekLast().n < (i - l + 1) ){
+            while(!deque.isEmpty() && deque.peekLast().value > t)
                 deque.removeLast();
-            }
 
-            if(deque.peekFirst().value  < node.value){
-                System.out.println(deque.peekFirst().value);
-                continue;
-            }
-            else{
-                deque.push(node);
-                System.out.println(deque.peekFirst().value);
-            }
+            deque.addLast(new Node(i,t));
+
+            bw.write(deque.peekFirst().value+" ");
+
         }
-
-        //tokenizer = new StringTokenizer(bf.readLine());
-
-        /*
-        int t;
-        int min = Integer.parseInt(tokenizer.nextToken());
-        bw.write(min + " ");
-        deque.push(min);
-        for(int i = 0; i < l; i++){
-            t = Integer.parseInt(tokenizer.nextToken());
-            if(t < min){
-                min = t;
-                bw.write(min+" ");
-            }
-        }
-
-        System.out.println("deque = " + deque);
-        // 뒤에가 first 먼저 들어간게 last
-        for(int i = l; i < n; i++){
-            t = Integer.parseInt(tokenizer.nextToken());
-            if(deque.peekFirst() > t ){
-                continue;
-            }
-
-        }*/
+        bw.flush();
+        bw.close();
     }
+
     public static class Node{
         private int n;
         private int value;
@@ -125,5 +98,6 @@ public class FindMinimum {
             this.value = value;
         }
     }
+
 }
 
