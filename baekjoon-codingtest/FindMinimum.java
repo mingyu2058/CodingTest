@@ -59,7 +59,7 @@ public class FindMinimum {
     public static void main(String args[]) throws IOException {
         //Deque<Integer> deque = new LinkedList<>();
         Deque<Node> deque = new LinkedList<>();
-        
+
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
