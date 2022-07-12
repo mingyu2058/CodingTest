@@ -1,3 +1,8 @@
+/**
+ * 문제 : 버블정렬
+ * 링크 : https://www.acmicpc.net/problem/1838
+ **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
