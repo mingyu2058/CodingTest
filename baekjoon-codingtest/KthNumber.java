@@ -59,12 +59,11 @@ public class KthNumber {
                 quicksort(arr,pivot+1,end,k);
             }
         }
+
     }
     public static int partition(int[] arr, int start, int end) {
         int middle = (start + end) / 2;
-        
         swap(arr, start, middle);
-
         int pivot = arr[start];
         int i = start, j = end;
 
