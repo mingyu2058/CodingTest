@@ -29,7 +29,7 @@ public class KthNumber {
 
     }
     */
-    
+
     public static void main(String args[]) throws IOException{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokenizer = new StringTokenizer(bf.readLine());
