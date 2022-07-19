@@ -1,5 +1,7 @@
-// 1062번 가르침
-
+/**
+ * 문제 : 가르침
+ * 링크 : https://www.acmicpc.net/problem/1062
+ **/
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
