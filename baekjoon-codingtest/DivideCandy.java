@@ -1,6 +1,6 @@
 /**
- * 문제 : 가르침
- * 링크 : https://www.acmicpc.net/problem/1062
+ * 문제 : 캔디 분배
+ * 링크 : https://www.acmicpc.net/problem/3955
  **/
 
 
