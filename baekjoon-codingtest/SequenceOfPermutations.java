@@ -1,3 +1,8 @@
+/**
+ * 문제 : 순열의 순서
+ * 링크 : https://www.acmicpc.net/problem/1722
+ **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
