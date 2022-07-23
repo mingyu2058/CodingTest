@@ -1,3 +1,8 @@
+/**
+ * 문제 : 구간 합 구하기
+ * 링크 : https://www.acmicpc.net/problem/2402
+ **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
