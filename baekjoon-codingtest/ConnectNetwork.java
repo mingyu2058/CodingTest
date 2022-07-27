@@ -1,3 +1,8 @@
+/**
+ * 문제 : 네트워크 연결
+ * 링크 : https://www.acmicpc.net/problem/1922
+ **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
