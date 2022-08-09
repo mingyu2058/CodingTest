@@ -1,3 +1,8 @@
+/**
+ * 문제 : N 과 M(1)
+ * 링크 : https://www.acmicpc.net/problem/15649
+ * **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,31 +21,32 @@ public class NM1 {
         L = M + M - 1;
 
         for (int i = 1; i <= N; i++) {
+            visited = new boolean[N+1];
             dfs(i,"");
         }
 
     }
-    static void dfs(int n, String s){
+    static void dfs(int n, String s) {
 
-        while(true) {
-            // 체크인
-            s += Integer.toString(n);
+        // 체크인
+        visited[n] = true;
+        s += Integer.toString(n);
 
-            // 정답 확인
-            if (s.length() == L) {
-                System.out.println(s);
-                break;
-            }
-            s += " ";
+        // 정답 확인
+        if (s.length() == L) {
+            System.out.println(s);
+        }
+        s += " ";
 
-            // 순회
-            for (int i = 1; i <= N; i++) {
-                if(i==n)
-                    continue;
-                dfs(i,s);
+        // 순회
+        for (int i = 1; i <= N; i++) {
+            // 갈 수 있는가?
+            if (visited[i] == false) {
+                //간다
+                dfs(i, s);
             }
         }
-
+        visited[n] = false;
 
     }
 }
