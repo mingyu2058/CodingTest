@@ -1,6 +1,6 @@
 /**
- * 문제 : N과 M (6)
- * 링크 : https://www.acmicpc.net/problem/15655
+ * 문제 : N과 M (7)
+ * 링크 : https://www.acmicpc.net/problem/15656
  **/
 
 import java.io.*;
