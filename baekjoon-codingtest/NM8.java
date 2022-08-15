@@ -1,3 +1,8 @@
+/**
+ * 문제 : N과 M (8)
+ * 링크 : https://www.acmicpc.net/problem/15657
+ **/
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
