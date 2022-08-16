@@ -30,7 +30,8 @@ public class NM9 {
         Arrays.sort(arr);
 
         for(int i = 0; i < arr.length; i++){
-            dfs(i,"");
+            if(i == 0 ||  ( i > 0 && arr[i] != arr[i-1] ))
+                dfs(i,"");
         }
 
         bw.flush();
@@ -44,16 +45,24 @@ public class NM9 {
 
         if(Count == M){
             s += "\n";
-            if(list.contains(s)==false){
+            if(list.isEmpty()){
                 bw.write(s);
                 list.add(s);
+            }else {
+                //if (!list.get(list.size() - 1).equals(s)) {
+                    bw.write(s);
+                    list.add(s);
+                //}
             }
         }
         s += " ";
 
         for(int i = 0; i < arr.length; i++){
-            if(Count < M && visited[i] == false){
-                dfs(i,s);
+            if(Count < M && visited[i]==false){
+                // i != i+1
+                //if(i == 0 ||  (i > 0 && arr[i] != arr[i-1]) ) {
+                    dfs(i, s);
+                //}
             }
         }
 
