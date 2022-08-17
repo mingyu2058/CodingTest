@@ -1,5 +1,5 @@
 /**
- * 문제 :
+ * 문제 : 게임
  * 링크 : https://www.acmicpc.net/problem/1072
  **/
 
