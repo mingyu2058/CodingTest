@@ -1,3 +1,8 @@
+/**
+ * 문제 : N과 M (9)
+ * 링크 : https://www.acmicpc.net/problem/15658
+ **/
+
 import java.io.*;
 import java.util.*;
 
