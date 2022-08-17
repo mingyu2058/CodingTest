@@ -1,3 +1,7 @@
+/**
+ * 문제 :
+ * 링크 : https://www.acmicpc.net/problem/1072
+ **/
 
 import java.io.BufferedReader;
 import java.io.IOException;
