@@ -1,4 +1,7 @@
-
+/**
+ * 문제 : 행렬 곱셈 순서
+ * 링크 : https://www.acmicpc.net/problem/11049
+ **/
 import java.io.*;
 import java.util.*;
 public class MatrixMultiplicationSequence {
