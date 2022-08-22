@@ -7,7 +7,6 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-
 public class NM3 {
     static int N,M;
     static int count = 0;
