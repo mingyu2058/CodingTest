@@ -1,6 +1,6 @@
 /**
- * 문제 : 최소 스패닝 트리
- * 링크 : https://www.acmicpc.net/problem/1197
+ * 문제 : 우주신과의 교감
+ * 링크 : https://www.acmicpc.net/problem/1774
  **/
 
 import java.io.BufferedReader;
