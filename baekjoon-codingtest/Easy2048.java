@@ -2,6 +2,7 @@
  * 문제 : 2048(Easy)
  * 링크 : https://www.acmicpc.net/problem/12100
  **/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
