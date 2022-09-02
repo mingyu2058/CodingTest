@@ -26,7 +26,6 @@ public class StoneGame {
                 N -= 1;
             }
             t++;
-
         }
 
     }
