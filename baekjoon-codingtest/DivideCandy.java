@@ -3,11 +3,8 @@
  * 링크 : https://www.acmicpc.net/problem/3955
  **/
 
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class DivideCandy {
     static int N;
