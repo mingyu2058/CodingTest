@@ -28,13 +28,11 @@ public class CutTree {
             max = Math.max(trees[i], max);
         }
 
-
         long start = 0;
         long end = max;
 
         long mid;
         long result = 0;
-
 
         while (true) {
             mid = (start+end)/2;
