@@ -14,6 +14,10 @@ public class Good {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bf.readLine());
 
+        int sum ;
+        int firstPoint ;
+        int endPoint;
+
         int[] arr = new int[n];
         boolean[] boolArr = new boolean[n];
         int result = 0;
@@ -24,10 +28,6 @@ public class Good {
             arr[i] = Integer.parseInt(tokenizer.nextToken());
         }
 
-
-        int sum ;
-        int firstPoint ;
-        int endPoint;
 
         Arrays.sort(arr);
 
