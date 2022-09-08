@@ -25,10 +25,8 @@ public class Easy2048 {
                 block[i][j] = tmp;
             }
         }
-
         dfs(0);
         System.out.println(answer);
-
     }
 
     static void dfs(int count) {
