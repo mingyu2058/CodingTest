@@ -8,6 +8,7 @@ public class MakeJadenCase {
 
         String print = solution(s);
         System.out.println("print = " + print);
+
     }
     static String solution(String s){
         sb = new StringBuilder();
@@ -31,7 +32,11 @@ public class MakeJadenCase {
     }
 
     static char check(char c, boolean isCheck){
+        if(c<65){
 
+        }else{
+
+        }
     }
 
 }
