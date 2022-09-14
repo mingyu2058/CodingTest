@@ -26,7 +26,7 @@ public class MakeJadenCase {
 
             }
 
-
+            break;
         }
         return answer;
     }
