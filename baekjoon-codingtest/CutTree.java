@@ -58,6 +58,7 @@ public class CutTree {
 
         System.out.println(result);
     }
+
     static long calc(long value){
         long result = 0;
         for (int i = 0; i < trees.length; i++) {
