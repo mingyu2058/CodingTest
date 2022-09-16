@@ -30,7 +30,6 @@ public class CutTree {
 
         long start = 0;
         long end = max;
-
         long mid;
         long result = 0;
 
