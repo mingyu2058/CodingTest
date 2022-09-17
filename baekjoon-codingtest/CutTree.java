@@ -2,7 +2,6 @@
  * 문제 : 나무 자르기
  * 링크 : https://www.acmicpc.net/problem/2805
  **/
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
