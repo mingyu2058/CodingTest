@@ -53,7 +53,6 @@ public class CutTree {
                 break;
             }
         }
-
         System.out.println(result);
     }
 
