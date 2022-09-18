@@ -54,7 +54,6 @@ public class ConnectNetwork {
         }
         System.out.println(answer);
 
-
     }
     static int find(int x){
         if(parent[x] == x)
