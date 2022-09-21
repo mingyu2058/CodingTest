@@ -8,7 +8,6 @@ public class MakeJadenCase {
 
         String print = solution(s);
         System.out.println("print = " + print);
-
     }
     static String solution(String s){
         sb = new StringBuilder();
